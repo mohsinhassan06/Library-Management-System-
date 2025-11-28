@@ -1,90 +1,50 @@
-Library Management System (MASM + Irvine32)
+📚 Library Management System (MASM + Irvine32)
 
-This project is a Library Management System implemented in x86 Assembly (MASM) using the Irvine32 library. It allows managing books, users, and borrowing/returning operations with simple menu-driven functionality. The program is designed to run in Visual Studio (x86).
 
-Features
 
-Admin Login
 
-Allows admin to log in using a username and password (admin / admin123).
+A console-based Library Management System written in x86 Assembly (MASM) using the Irvine32 library. Manage books, users, and borrowing/returning operations through a menu-driven interface. Runs on Visual Studio (x86).
 
-Provides access to manage books and issue/return operations.
+🛠 Features
 
-Add Book
+Admin Login: Secure access with username/password (admin / admin123).
 
-Admin can add new books to the library.
+Add Book: Add new books with ID and title. Max books: 50.
 
-Each book has a unique ID, title, and availability status.
+Search Book: Search by ID or title; displays status and borrower.
 
-Maximum number of books: 50.
+Delete Book: Remove books by ID; shifts remaining records.
 
-Search Book
+Issue Book: Issue books to users (borrow limit: 3 books).
 
-Search by Book ID or Book Title.
+Return Book: Return books and calculate late fines (Rs. 5/day).
 
-Displays book details including status and borrower if issued.
+View Books: See available or issued books.
 
-Delete Book
+Sort Books by ID: Sorts books while preserving all related data.
 
-Admin can delete a book by ID.
+📊 Limits & Constants
+Feature	Limit / Value
+Max Books	50
+Max Book Title	50 characters
+Max Username / Password	20 characters
+Max Borrow Limit	3 books
+Fine per Day	Rs. 5
+💾 Data Structures
 
-Handles array shifting to remove the book from the system.
+bookIDs – Stores book IDs
 
-Issue Book
+bookTitles – Stores book titles
 
-Books can be issued to users with a unique User ID.
+bookAvailable – Availability status (1 = available, 0 = issued)
 
-Enforces a borrow limit of 3 books per user.
+bookBorrowerID – Tracks which user borrowed the book
 
-Updates book availability and borrower information.
+bookDaysIssued – Tracks days since book was issued
 
-Return Book
+userBorrowCount – Number of books each user has borrowed
 
-Users can return books and input late days.
-
-Calculates fines at Rs. 5 per day if late.
-
-Updates book availability and borrower count.
-
-View Books
-
-Available Books: Shows all books that are currently available.
-
-Issued Books: Shows all books that are currently issued.
-
-Sort Books by ID
-
-Implements bubble sort to sort books based on their ID.
-
-Updates all associated book data during sorting.
-
-Constants & Limits
-
-Maximum books: 50
-
-Maximum book title length: 50 characters
-
-Maximum username/password length: 20 characters
-
-Maximum borrow limit per user: 3 books
-
-Fine per day: Rs. 5
-
-Data Structures
-
-bookIDs: DWORD array storing book IDs
-
-bookTitles: BYTE array storing book titles
-
-bookAvailable: BYTE array for availability status (1 = available, 0 = issued)
-
-bookBorrowerID: DWORD array for borrower IDs
-
-bookDaysIssued: DWORD array for tracking days issued
-
-userBorrowCount: DWORD array storing number of books borrowed per user
-
-How to Run
+⚡ Usage
 
 Open Visual Studio with MASM support.
 
@@ -94,6 +54,6 @@ Include the Irvine32 library.
 
 Add LibraryManagement.asm to your project.
 
-Build and run the project in x86 mode.
+Build and run in x86 mode.
 
-Interact with the program using the menu.
+Use the console menu to navigate the system.
